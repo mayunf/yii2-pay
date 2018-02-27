@@ -15,18 +15,22 @@ use Yansongda\Pay\Pay as BasePay;
 class Pay extends Component
 {
 
-    public function getAlipay()
+    public $alipay_config;
+
+    public $wechat_config;
+
+    public function getAlipay(array $config = [])
     {
-        return BasePay::alipay(Yii::$app->params['alipay']);
+        return BasePay::alipay(array_merge($this->alipay_config,$config));
     }
 
-    public function getWechat()
+    public function getWechat(array $config = [])
     {
-        return BasePay::wechat(Yii::$app->params['wechat']);
+        return BasePay::wechat(array_merge($this->wechat_config,$config));
     }
 
     public function __call($method,$params)
     {
-        return BasePay::$method(Yii::$app->params[$method]);
+        return BasePay::$method(array_merge($this->$method.'_config',$params));
     }
 }
