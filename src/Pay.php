@@ -12,6 +12,12 @@ use Yii;
 use yii\base\Component;
 use Yansongda\Pay\Pay as BasePay;
 
+/**
+ * Class Pay
+ * @method static \Yansongda\Pay\Gateways\Alipay alipay(array $config) 支付宝
+ * @method static \Yansongda\Pay\Gateways\Wechat wechat(array $config) 微信
+ * @package Mayunfeng\Pay
+ */
 class Pay extends Component
 {
 
