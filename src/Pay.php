@@ -14,8 +14,6 @@ use Yansongda\Pay\Pay as BasePay;
 
 /**
  * Class Pay
- * @method static \Yansongda\Pay\Gateways\Alipay alipay(array $config) 支付宝
- * @method static \Yansongda\Pay\Gateways\Wechat wechat(array $config) 微信
  * @package Mayunfeng\Pay
  */
 class Pay extends Component
@@ -25,18 +23,13 @@ class Pay extends Component
 
     public $wechat_config;
 
-    public function getAlipay(array $config = [])
+    public function alipay(array $config = [])
     {
         return BasePay::alipay(array_merge($this->alipay_config,$config));
     }
 
-    public function getWechat(array $config = [])
+    public function wechat(array $config = [])
     {
         return BasePay::wechat(array_merge($this->wechat_config,$config));
-    }
-
-    public function __call($method,$params)
-    {
-        return BasePay::$method(array_merge($this->$method.'_config',$params));
     }
 }
