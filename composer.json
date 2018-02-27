@@ -1,0 +1,25 @@
+{
+    "name": "mayunfeng/yii2-pay",
+    "type": "yii2-extension",
+    "description": "专注 Alipay 和 WeChat 的 yii2 支付扩展包 （基于 yansongda/pay）",
+    "keywords": ["alipay", "wechat", "pay", "yii2", "package"],
+    "support": {
+        "issues": "https://github.com/mayunfeng0614/yii2-pay/issues",
+        "source": "https://github.com/mayunfeng0614/yii2-pay"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "马运锋",
+            "email": "yunfeng0614@qq.com"
+        }
+    ],
+    "require": {
+        "yansongda/pay": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mayunfeng\\Pay\\": "src"
+        }
+    }
+}
